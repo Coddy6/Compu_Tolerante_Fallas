@@ -60,7 +60,7 @@ Si se divide entre cero se tira el error de que la division es indefinida, ya qu
     
 Y nos muestra el siguiente mensaje de error.
 
-    error: Division by zero is undefined                
+    error: Division entre cero esta indefinida                
 Por lo tanto, de esta manera, podemos manejar excepciones desconocidas e imprimirlas.
 
 Conclusión.

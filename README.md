@@ -1,26 +1,27 @@
 
-                                         Centro Universitario de Ciencias Exactas e Ingenierías
+                               Centro Universitario de Ciencias Exactas e Ingenierías
 
-                                                  Depto. Ciencias computacionales
+                                        Depto. Ciencias computacionales
 
-                                                 Carrera: Ingeniería en Computación
+                                       Carrera: Ingeniería en Computación
 
-                                               Materia: Computación tolerante a fallas
+                                     Materia: Computación tolerante a fallas
 
-                                                           Sección: D06
+                                                 Sección: D06
 
-                                                Profesor: Lopez Franco Michel Emanuel
+                                      Profesor: Lopez Franco Michel Emanuel
 
-                                                    Alumno: Huerta Sigala Aaron
+                                          Alumno: Huerta Sigala Aaron
 
-                                                        Código: 220791152
+                                              Código: 220791152
 
-                                           Tema: Otras herramientas para el manejar errores.
+                                 Tema: Otras herramientas para el manejar errores.
 
-                                                          30/Enero/2023
-                                                          
-                                                          
-                                                  USO DE try, throw y catch en C++
+                                                30/Enero/2023
+
+
+                                        USO DE try, throw y catch en C++
+
                                                   
 Para implementar el control de excepciones en C++, se usan las expresiones try, throw y catch.
                                                           

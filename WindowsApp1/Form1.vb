@@ -1,3 +1,4 @@
+'Aaron Huerta Sigala'
 Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load 'funcion cuando carga el formulario
         TextBox1.Text = My.Settings.usuario                      'se cargan a los textBox (usuario y contraseña)

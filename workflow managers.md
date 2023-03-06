@@ -4,7 +4,8 @@
 
 
 ¿Qué es perfect?
-es una libreria de python que se usa para hacer ciertas caracteristicas dentro de un codigo de python, ratreara el estado y el resultado de cada tarea en
+
+Es una libreria de python que se usa para hacer ciertas caracteristicas dentro de un codigo de python, ratreara el estado y el resultado de cada tarea en
 el flujo de trabajo y permitira que dependan unas de otras, en una variedad de formas.
 
 Aqui podemos encontrar un codigo para hacer el uso de la libreria prefect. LO que hace es usar las abses de datos y abrir una pagina web para obtener
@@ -63,6 +64,7 @@ valores y que hagas colecciones segun los datos que se le piden.
     
 
 Conclusión.
+
 Me parecio interesante el tema de el prefect y los usos que se le puede dar, ademas de que pude comprender lo que es el workflow manager. No soy experto
 en lo que es el lenguaje de programación de python y se me complico en unas cosas, pero al final nunca me compilo ni me funciono el codigo.
 Despues de verificar con mis compañeros de clase resulta que era una version antigua y esta que usa uno hoy en dia es mas actualizada. Por ello no pude

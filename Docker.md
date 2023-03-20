@@ -1,4 +1,36 @@
 
+                           Centro Universitario de Ciencias Exactas e Ingenierías
+
+                                    Depto. Ciencias computacionales
+
+                                   Carrera: Ingeniería en Computación
+
+                                 Materia: Computación tolerante a fallas
+
+                                             Sección: D06
+
+                                  Profesor: Lopez Franco Michel Emanuel
+
+                                      Alumno: Huerta Sigala Aaron
+
+                                          Código: 220791152
+
+                             Tema: Otras herramientas para el manejar errores.
+
+                                            20/Febrero/2023
+                                    
+                                    Ejemplo basico utilizando Docker.
+
+Introducción
+
+Para esta actividad, utilizare docker para descargar una imagen desde esta aplicación y luego utilizar la instancia, haciendo uso de sus comandos
+basicos y el como funciona al cerrar la terminal viendo como queda levantada la instancia y cuando no.
+
+¿Qué es docker?
+Docker es una plataforma de software que le permite crear, probar e implementar aplicaciones rápidamente. Docker empaqueta software en unidades estandarizadas llamadas contenedores que incluyen todo lo necesario para que el software se ejecute, incluidas bibliotecas, herramientas de sistema, código y tiempo de ejecución. 
+Docker es un sistema operativo para contenedores. De manera similar a cómo una máquina virtual virtualiza (elimina la necesidad de administrar directamente) el hardware del servidor, los contenedores virtualizan el sistema operativo de un servidor. Docker se instala en cada servidor y proporciona comandos sencillos que puede utilizar para crear, iniciar o detener contenedores.
+
+
 
 Aqui podemos ver la aplicacion de escritorio de docker
 ![image](https://user-images.githubusercontent.com/86500224/226464479-3fb18028-7e44-4726-8996-a822daba4c5d.png)
@@ -51,4 +83,7 @@ Tambien podemos eliminar el contendeor que no necesitemos. Y listamos la lista d
 
 Y con ello tendriamos un ejemplo basico utilizando docker.
 
+Conclusión
+
+Nunca habia utilizado docker, pero podria decirse que me dio la sensación de que es similar a una maquina virtual que ejecuta un sistema dentro de un servidor, aunque la maquina virtual no lo hace como tal pero es parecido ya que usas imagenes para utilizar algun sistema que no podrias en tu maquina.
 

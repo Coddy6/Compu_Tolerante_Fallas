@@ -112,18 +112,161 @@ Admite compilaciones incrementales de la clase java
 
 Soporte en la mayoría de herramientas de Integración continua
 
+                                                        Codigo de ejemplo
+
+
+
+Getting resource
+              
+              package com.asprans.controller;
+
+              import javax.ws.rs.GET;
+              import javax.ws.rs.Path;
+              import javax.ws.rs.Produces;
+              import javax.ws.rs.core.MediaType;
+
+              @Path("/hello-resteasy")
+              public class GreetingResource {
+
+                  @GET
+                  @Produces(MediaType.TEXT_PLAIN)
+                  public String hello() {
+                      return "Hello RESTEasy";
+                  }
+              }
+
+Person cotroler
+
+                package com.asprans.controller;
+
+                import com.asprans.model.Person;
+                import org.eclipse.microprofile.faulttolerance.*;
+
+                import javax.ws.rs.GET;
+                import javax.ws.rs.Path;
+                import javax.ws.rs.Produces;
+                import javax.ws.rs.core.MediaType;
+                import java.util.ArrayList;
+                import java.util.List;
+                import java.util.Random;
+                import java.util.logging.Logger;
+
+                @Path("/persons")
+                @Produces(MediaType.APPLICATION_JSON)
+                public class PersonController {
+
+                    List<Person> personList = new ArrayList<>();
+                    Logger LOGGER = Logger.getLogger("Demologger");
+
+                    @GET
+                    //@Timeout(value = 5000L)
+                    //@Retry(maxRetries = 4)
+                    //@CircuitBreaker(failureRatio = 0.1, delay = 15000L)
+                    //@Bulkhead(value = 0)
+                    @Fallback(fallbackMethod = "getPersonFallbackList")
+                    public List<Person> getPersonList(){
+                        LOGGER.info("Ejecutando person list");
+                        doFail();
+                        //doWait();
+                        return this.personList;
+                    }
+
+                    public List<Person> getPersonFallbackList(){
+                        var person = new Person(-1L, "Asprans", "me.asprans.com");
+                        return List.of(person);
+                    }
+
+                    public void doWait(){
+                        var random = new Random();
+                        try {
+                            LOGGER.warning("Haciendo un sleep");
+                            Thread.sleep((random.nextInt(10) + 4) * 1000L);
+                        }catch (Exception ex){
+
+                        }
+                    }
+
+                    public void doFail(){
+                        var random = new Random();
+                        if(random.nextBoolean()){
+                            LOGGER.warning("Se produce una falla");
+                            throw  new RuntimeException("Haciendo que la implementacion falle");
+                        }
+                    }
+                }
+
+
+Person
+
+
+              package com.asprans.model;
+
+              public class Person {
+                  private Long personId;
+                  private String name;
+                  private String email;
+
+                  public Person(){
+
+                  }
+
+                  public Person(Long personId, String name, String email) {
+                      this.personId = personId;
+                      this.name = name;
+                      this.email = email;
+                  }
+
+                  public Long getPersonId() {
+                      return personId;
+                  }
+
+                  public void setPersonId(Long personId) {
+                      this.personId = personId;
+                  }
+
+                  public String getName() {
+                      return name;
+                  }
+
+                  public void setName(String name) {
+                      this.name = name;
+                  }
+
+                  public String getEmail() {
+                      return email;
+                  }
+
+                  public void setEmail(String email) {
+                      this.email = email;
+                  }
+              }
+
+
+Conclusión
 
 
 
 
+
+
+
+
+
+Bibliografia
 
 https://es.quarkus.io/about/
+
 https://learn.microsoft.com/es-es/azure/developer/java/eclipse-microprofile/deploy-microprofile-to-web-app-for-containers
+
 https://www.ibm.com/docs/es/odm/8.5.1?topic=application-java-se-java-ee-applications
+
 https://www.arquitecturajava.com/jakarta-ee/
+
 https://www.tokioschool.com/noticias/spring-boot/
+
 https://www.chakray.com/es/gradle-vs-maven-definiciones-diferencias/
 
+https://www.youtube.com/watch?v=sTkolTRuPlE&t=2s
 
 
 

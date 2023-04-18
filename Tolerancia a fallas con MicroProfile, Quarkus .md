@@ -115,6 +115,9 @@ Soporte en la mayoría de herramientas de Integración continua
                                                         Codigo de ejemplo
 
 
+Esto ayuda a la implementacion hacia la tolerancia a fallas, se utiliza quartus. Los cuales son patrones o reglas personalizadas
+para cuando se cumpla alguna de esats que se considere fallo, se mandara al usuario a un camino alternativo para evitar el fallo.
+Se hacen retrys para reintentar cualquier solicutud cada vez que se haga un fallo
 
 Getting resource
               
@@ -198,6 +201,8 @@ Person cotroler
 
 Person
 
+uso de una clase persona colocando sus getters y setters para obtener y retornar datos segun se requieran
+
 
               package com.asprans.model;
 
@@ -244,7 +249,9 @@ Person
 
 Conclusión
 
-
+El uso de esta herramienta es interesante en cierta foram como hace el uso de quartus y con el codigo visto en el video, como funciona este programa.
+Con la tolerancia a fallos y si sucede alguno a donde es redirigido, segun los parametros que se implementan, y daemas de reintentar los envios 
+de solicitudes si sucede algo para entrar en alguna funcion para que no haya error con caminos alternativos.
 
 
 

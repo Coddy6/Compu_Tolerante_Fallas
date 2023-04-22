@@ -50,6 +50,10 @@ Asegura alta disponibilidad y confiabilidad al enviar solicitudes solo a servido
 
 Proporciona la flexibilidad de agregar o restar servidores según la demanda
 
+.
+.
+
+                  Implementacion de una aplicación Resilient Go en Kubernetes en DigitalOcean
 
 Main.go
 

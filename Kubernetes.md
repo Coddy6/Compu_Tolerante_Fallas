@@ -15,7 +15,7 @@
 
                                                       Código: 220791152
 
-                                         Tema: Tolerancia a fallas con MicroProfile, Quarkus
+                                                      Tema: Kubernetes
 
                                                         24/Abril/2023
 
@@ -53,9 +53,13 @@ Proporciona la flexibilidad de agregar o restar servidores según la demanda
 .
 .
 
-                  Implementacion de una aplicación Resilient Go en Kubernetes en DigitalOcean
+                            Implementacion de una aplicación Resilient Go en Kubernetes en DigitalOcean
 
 Main.go
+
+Importamos las bibliotecas de entrada y salida de texto y la de servidor y cliente de HTTP.
+'Responsewriter' y request, el primero construye la respuesta mientras que el segundo representa una solicitud entrante. 'Setuproutes' asignara las solicitudes entrantes a sus funciones de controlador http. LLamando al homepage para que imprime el texto escrito "My awesome Go App".
+La funcion main es el inicio de la aplicacion y hara las funciones dichas.
 
           package main
 
@@ -81,6 +85,9 @@ Main.go
 
 Dockerfile
 
+Especificamos la imagen a utilizar, luego el contenedor y despues el directorio.
+La siguiente linea nos dice donde se ejecutaran los comandos y el siguiente ejecutara el main.
+
           FROM golang:1.12.0-alpine3.9
           RUN mkdir /app
           ADD . /app
@@ -91,7 +98,13 @@ Dockerfile
 
 deployment.yml
 
-          
+Aqui usamos el kubernets lo cual usaremos el deployment, definiremos el metadata.
+De ahi creamos el spec el cual es necesario para cada objeto de kubernetes.
+Luego el selector que se usara como un selector de etiquetas para sus pods, y le pondremos el nombre correspondiente a la etiqueta.
+Despues colocamos template el cual usara las etiquetas para su desarrollo.
+Y al final el spec, diferenciado al otro spec ya que este usara los template creados con las etiquetas.
+
+
           apiVersion: apps/v1
           kind: Deployment
           metadata:
@@ -116,6 +129,9 @@ deployment.yml
 
 service.yml
           
+Creamos un servicio, la version de la api 1, le pondremos nombre al metadata.
+Luego el spec que daremos el tipo de servicio y despues los puertos que usara y al final el selector que  mandara a llamar el archivo dicho.
+
           apiVersion: v1
           kind: Service
           metadata:
@@ -136,7 +152,7 @@ service.yml
 
 Conclusión
 
-
+La creación de la aplicacion Go y luego colocarla en el contenedor Docker e implementarlo con kubernetes fue algo tedioso y complicacdo al no tener las experiencias necesarias para trabajar con este. El video ayudo de cierta forma pero aun asi es complicado configurar las aplicaciones y que funcionen concretamente como uno desea. Pero fue algo simple aun asi es interesante como es que funcionan todas estas aplicaciones.
 
 Bibliografia
 

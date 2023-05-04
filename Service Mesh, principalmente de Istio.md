@@ -1,10 +1,51 @@
 
+                                   Centro Universitario de Ciencias Exactas e Ingenierías
 
+                                                Depto. Ciencias computacionales
 
+                                               Carrera: Ingeniería en Computación
 
+                                             Materia: Computación tolerante a fallas
 
+                                                         Sección: D06
 
+                                              Profesor: Lopez Franco Michel Emanuel
 
+                                                  Alumno: Huerta Sigala Aaron
+
+                                                      Código: 220791152
+
+                                           Tema: Service Mesh, principalmente de Istio
+
+                                                        8/Mayo2023
+
+Introducción
+
+¿Que es Istio?
+
+Istio es una plataforma de malla de servicios con tecnología de open source que permite controlar el intercambio de datos entre los microservicios. Incluye API que le permiten integrarse a cualquier plataforma de registro, telemetría o sistema de políticas. El diseño de esta plataforma facilita su ejecución en distintos entornos: on-premise, alojados en la nube, en contenedores de Kubernetes y en servicios que se ejecutan en máquinas virtuales, entre otros.
+
+La arquitectura de Istio se divide en el plano de datos y el plano de control. En el plano de datos, el soporte de esta plataforma se agrega a un servicio mediante la implementación de un proxy de sidecar dentro de su entorno. Este proxy de sidecar se encuentra junto a un microservicio y envía las solicitudes desde y hacia otros proxies. En conjunto, dichos proxies forman una red que intercepta la comunicación de red entre los microservicios. El plano de control gestiona y configura los proxies para enrutar el tráfico. Este plano también configura los elementos para aplicar las políticas y recopilar datos de telemetría.
+
+Las funciones de Istio le permiten ejecutar una arquitectura de microservicios distribuida. Estas son algunas de sus funciones:
+
+Gestión del tráfico: el enrutamiento del tráfico y la configuración de las reglas en Istio le permiten controlar el flujo del tráfico y las llamadas a la API entre los servicios.
+
+Seguridad: Istio proporciona el canal de comunicación subyacente y gestiona la autenticación, la autorización y el cifrado de la comunicación del servicio a escala. Con Istio, puede aplicar políticas de manera uniforme en distintos protocolos y tiempos de ejecución, sin tener que realizar grandes cambios en la aplicación. Los beneficios de usar Istio con políticas de red de Kubernetes (o de infraestructura) incluyen la capacidad para proteger la comunicación de pod a pod o de servicio a servicio en las capas de la aplicación y la red.
+
+Capacidad de observación: obtenga información sobre la implementación de su malla de servicios con las funciones de registro, supervisión y seguimiento de Istio. La supervisión le permite ver cómo la actividad del servicio afecta al rendimiento upstream y downstream. Los paneles personalizados le permiten conocer el rendimiento de todos sus servicios.
+
+![image](https://user-images.githubusercontent.com/86500224/236310434-3df7e60f-dbe9-4e2e-ba41-1d3d97aec0a4.png)
+
+Provee métodos para configurar toda la flota de proxys que componen nuestra service mesh.
+
+Tiene un control de enrutamiento y del balanceo de la carga.
+
+Implementa por defecto observabilidad, es decir, que tenemos tanto el monitoreo como la trazabilidad de nuestros servicios ya integrado dentro de Istio por defecto.
+
+Podemos hacer testing caótico.
+
+Ofrece opciones de seguridad, ya que provee de una forma para poder comunicar servicio a servicio de forma segura. Además hace que la gestión de llaves, la automatización de la creación de llaves, la generación de certificados, la distribución de ellos mismos, la rotación, la revocación, etcétera, todas estas operaciones sean generadas automáticamente. De esta forma la comunicación entre dos servicios es segura a través de mutual TLS, sin que tengamos que configurar nada, ya que lo hace Istio de forma automatizada.
 
 Descargue las versiones de istio para windows usando la 1.17.2, ya que se usa mas para linux. Lo intente usar en una maquina virtual pero no finciono.
 
@@ -53,13 +94,14 @@ A uno de los pods empezamos a mandar trafico cada 1 segundo, del contenedor v2 a
 ![image](https://user-images.githubusercontent.com/86500224/235374092-6aa7abf0-0ca1-4715-ae61-d3605e9c3723.png)
 
 
-
-
-
-
 Conclusión
 
+Me parecio interesante el funcionamiento de Istio, como es que maneja los contenedores y servicios para que funcionen y como estos transmiten información entre si con los servicios que se crean, aunque a mi no me quiso funcionar dicha aplicacion en mi computadora, por algo del puerto que queria usar, no encontre solución o una fomra de arreglar eso, al principio queria usarlo en windows con maquina virtual pero no funciono, luego quise hacerlo normal en windwos pero tampoco me funciono por el mismo problema hacia el puerto que abria para acceder hacia la red. Pero con el video que mire sobre el ejemplo, fue algo mas sencillo entenderlo como funciona a pesar de no poder realizarlo del todo.
 
 Bibliografia
 
 https://www.enmilocalfunciona.io/instalando-istio-con-docker-en-windows-10/
+
+https://www.redhat.com/es/topics/microservices/what-is-istio
+
+https://openwebinars.net/blog/que-es-istio/

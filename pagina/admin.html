@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>  
+    <link href="css/admin.css" rel="stylesheet"/>
+  
+</head>
+
+<body>
+
+ <div id="header">
+    <div class="nom"><a href="usuario.html">BiblioDraix</a></div>
+    <DIV style="color:white ;"> ADMINISTRADOR</DIV>
+    <div class="imgPlaceHolder"></div>
+    <div id="open" >
+    </div>
+    <div ></div><div ></div> <!--Div basura parra centrar carro-->
+ </div>
+
+<div>
+
+</div>
+<div>
+
+</div>
+
+<div id="contenido">
+
+    <section>
+        <div class="section">
+            <div class="section1">
+                <div class="row" style="display: flex; justify-content: center;">
+                    <h1> Ingresa datos de nuevo libro:</h1>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" placeholder="Ingresa el nombre del libro:" class="form-control" id="tb_BookName"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <input type="text" placeholder="Precio:" class="form-control" id="tb_BookPrice"/>
+                    </div>
+                    <div class="col-3">
+                        <input type="text" placeholder="Stock:" class="form-control" id="tb_BookStock"/>
+                    </div>
+                    <div class="col">
+                        <input type="text" placeholder="Ingresa el Autor del libro:" class="form-control" id="tb_BookAuthor"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <textarea placeholder="Ingresa la descripcion del libro:" class="form-control" id="tb_BookDescription"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <input type="file" class="form-control" id="fu_NewBook" accept="image/*"/>
+                    </div>
+                    <div class="col-6">
+                        <input type="text" placeholder="Etiquetas" class="form-control" id="tb_BookTags"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="button" value="Guardar" class="form-control" onclick="createNewBook();"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div id="container" style="width: 299px; height: 48px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="section2">
+
+      
+            </div>
+          </div>
+    </section>
+    
+    <section>
+        <div class="section">
+            <div class="section1">
+                <div class="row" style="display: flex; justify-content: center;">
+                    <h1> Agregar Stock libro:</h1>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <select name="select" class="form-control" id="ddl_BookToStock">
+                           
+                          </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <input  type="number" placeholder="Stock:" class="form-control" id="tb_BookToStock"/>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col">
+                        <input type="button" value="Guardar" class="form-control"  onclick="pushStock();"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div id="container" style="width: 299px; height: 48px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="section2">
+
+      
+            </div>
+          </div>
+    </section>
+</div>
+<div id="pedidos-container">
+    
+    <div id="pedidos">
+        <H2>PEDIDOS<input type="text" placeholder="buscar un pedido" id="input"></H2>
+        <div class="pedido">
+            <div class="pedido-header">
+                  <span class="id-pedido">321654</span>
+            </div>
+                <div>
+                <h3>Direccion</h3>
+                    <div class="pedido-contenido">
+                        Lomas Del refugio C.P 45186  Tequila#42
+                </div>
+                </div>
+                <div>
+                    <h3>Metodo de Envio</h3>
+                        <div class="pedido-contenido">
+                            fedex
+                    </div>
+                    </div>
+                <div>
+                <h3>Estado del Envio | Seguimiento del paquete</h3>
+                    <div class="pedido-contenido">
+                       En progreso
+                </div>
+                </div>
+                <div class="pedido-productos" style="color:black ;">
+                    <div class="pedido-producto">
+                        <img src="lib/1.png" alt="">
+                        <div>
+                            <h4>Titulo</h4> 
+                            <div class="pedido-contenido">Berserk</div>
+                            <h4>Cantidad</h4>
+                            <div class="pedido-contenido">1</div>
+                            <h4>Precio</h4>
+                            <div class="pedido-contenido">$ 373.68</div>
+                        </div>
+                    </div>
+                    <div class="pedido-producto">
+                        <img src="lib/2.png" alt="">
+                        <div>
+                            <h4>Titulo</h4> 
+                            <div class="pedido-contenido">El senor de los anillos</div>
+                            <h4>Cantidad</h4>
+                            <div class="pedido-contenido">2</div>
+                            <h4>Precio</h4>
+                            <div class="pedido-contenido">$700.36</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4>COSTO TOTAL</h4>
+                    <div class="pedido-contenido">
+                        $ 1074.04
+
+
+
+
+</body>
+
+    <!-- Js Files-->
+    <script  src="https://www.gstatic.com/firebasejs/8.2.9/firebase.js"></script>
+    <script src="Js/firebase.js"> </script>
+    <script src="js/administrator.js"></script>
+    <script> start();</script>
+</html>
